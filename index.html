@@ -72,49 +72,38 @@
      
 
       
-    <div class="relative flex items-center mt-auto mr-20">
-      <!-- Background circle -->
-      <div class="bg-[#39DB4A] rounded-full w-60 h-60"></div>
-
-      <!-- Image positioned over the background -->
-      <img src="./Assets/Foodie hero.png" alt="Hero Image"
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-120 pb-10" />
-      </div>
-
-    </div>
-    <div class="card-container">
-  </section>
-  <div class="mt-2 flex flex-wrap justify-center items-start gap-10">
-    
-    <!-- Card 1 -->
-       <div class="bg-white rounded-lg shadow-md w-54 flex items-center justify-center ml-10">
-         <img src="https://via.placeholder.com/250x160" alt="Dish 1">
-         <div class="card-body ml-4">
-           <div class="card-title font-semibold text-lg">Delicious Pasta</div>
-           <div class="stars text-yellow-500">
-             ★ ★ ★ ★ ☆
-            </div>
-            <div class="price text-green-600 font-bold">$18.00</div>
-          </div>
-        </div>
-        
-        <!-- Card 2 -->
-        <div class=" bg-white rounded-lg shadow-md w-54 flex items-center justify-center ml-6">
-          <img src="https://via.placeholder.com/250x160" alt="Dish 2">
-          <div class="card-bodyb ml-4">
-            <div class="card-title font-semibold text-lg">Grilled Chicken</div>
-            <div class="stars text-yellow-500">
-              ★ ★ ★ ☆ ☆
-            </div>
-            <div class="price text-green-600 font-bold">$15.50</div>
-          </div>
-        </div>
-      </div>
-
-
+   
+  
+<!-- Container aligned right -->
+<div class="flex flex-col items-end pr-10 mt-10 space-y-8">
+  
+  <!-- Image inside a circle background -->
+  <div class="relative w-60 h-60">
+    <div class="bg-[#39DB4A] rounded-full w-full h-full"></div>
+    <img src="./Assets/Foodie hero.png" alt="Hero Image"
+         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-96 object-contain" />
   </div>
-  
-  
+
+  <!-- Cards container (side by side & right aligned) -->
+  <div class="flex justify-end gap-6 w-full max-w-md">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-lg shadow-md w-40 p-3">
+      <img src="https://via.placeholder.com/100x80" alt="Dish 1" class="rounded mb-2">
+      <div class="text-sm font-semibold">Delicious Pasta</div>
+      <div class="text-yellow-500 text-xs">★ ★ ★ ★ ☆</div>
+      <div class="text-green-600 font-bold mt-1 text-sm">$18.00</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-lg shadow-md w-40 p-3">
+      <img src="https://via.placeholder.com/100x80" alt="Dish 2" class="rounded mb-2">
+      <div class="text-sm font-semibold">Grilled Chicken</div>
+      <div class="text-yellow-500 text-xs">★ ★ ★ ☆ ☆</div>
+      <div class="text-green-600 font-bold mt-1 text-sm">$15.50</div>
+    </div>
+  </div>
+</div>
+
 <!-- script link -->
   <script src="script.js"></script>
 </body>

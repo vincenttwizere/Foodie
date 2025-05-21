@@ -27,12 +27,18 @@
 
       <!-- Right section: icons + button + menu toggle -->
       <div class="flex items-center gap-10 md:gap-4 text-lg text-gray-800">
-        <i class="fas fa-search"></i>
+        <i class="fas fa-search cursor-pointer" id="search-icon"></i>
         <div class="relative">
           <i class="fas fa-shopping-cart cursor-pointer" id="cart-icon"></i>
           <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">0</span>
         </div>
-                        <a href="#order">          <button class="bg-[#39DB4A] text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">            Order Now          </button>        </a>        <!-- Hamburger - Small screens only -->
+        <a href="#order">
+          <button class="bg-[#39DB4A] text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">
+            Order Now
+          </button>
+        </a>
+
+        <!-- Hamburger - Small screens only -->
         <button id="menu-btn" class="block md:hidden text-xl text-gray-700 focus:outline-none">
           <i id="menu-icon" class="fas fa-bars"></i>
         </button>
@@ -52,6 +58,30 @@
     </div>
   </header>
 
+  <!-- Search Overlay -->
+  <div id="search-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+    <div class="fixed inset-x-0 top-0 bg-white shadow-lg transform transition-transform duration-300 ease-in-out">
+      <div class="container mx-auto px-6 py-8 relative">
+        <button id="close-search" class="absolute top-4 right-6 text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+        
+        <div class="max-w-3xl mx-auto">
+          <div class="relative">
+            <input type="text" id="search-input" 
+                   class="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                   placeholder="Search for dishes, drinks, etc...">
+            <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          
+          <div id="search-results" class="mt-6 space-y-4 max-h-96 overflow-y-auto">
+            <!-- Search results will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Home Section -->
   <section id="home" class="mt-32 px-6 md:px-20">
     <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
@@ -67,7 +97,13 @@
         </p>
 
         <div class="flex gap-6 mt-8">
-                              <a href="#order">            <button class="bg-[#39DB4A] text-white px-6 py-3 rounded hover:bg-green-700 transition text-sm">              Order Now            </button>          </a>          <button class="flex items-center gap-2 text-sm text-gray-600">            Watch Video
+          <a href="#order">
+            <button class="bg-[#39DB4A] text-white px-6 py-3 rounded hover:bg-green-700 transition text-sm">
+              Order Now
+            </button>
+          </a>
+          <button class="flex items-center gap-2 text-sm text-gray-600">
+            Watch Video
             <span class="bg-white p-2 rounded-full shadow-lg">
               <i class="fas fa-play text-gray-800"></i>
             </span>
@@ -228,8 +264,13 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Weekly Special -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div class="h-48 bg-[#39DB4A] relative">
-          <img src="./Assets/dish 1.png" alt="Weekly Special" class="w-full h-full object-cover opacity-90" />
+        <div class="h-48 bg-white relative p-4">
+          <div class="relative w-40 h-40 mx-auto">
+            <div class="absolute inset-0 bg-[#39DB4A] bg-opacity-20 rounded-full overflow-hidden">
+              <div class="absolute inset-0 bg-[#39DB4A] opacity-30 rounded-full"></div>
+              <img src="./Assets/dish 1.png" alt="Weekly Special" class="w-full h-full object-cover p-2 rounded-full" />
+            </div>
+          </div>
           <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold">
             20% OFF
           </div>
@@ -248,8 +289,13 @@
 
       <!-- Happy Hour -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div class="h-48 bg-[#39DB4A] relative">
-          <img src="./Assets/dish 2.png" alt="Happy Hour" class="w-full h-full object-cover opacity-90" />
+        <div class="h-48 bg-white relative p-4">
+          <div class="relative w-40 h-40 mx-auto">
+            <div class="absolute inset-0 bg-[#39DB4A] bg-opacity-20 rounded-full overflow-hidden">
+              <div class="absolute inset-0 bg-[#39DB4A] opacity-30 rounded-full"></div>
+              <img src="./Assets/dish 2.png" alt="Happy Hour" class="w-full h-full object-cover p-2 rounded-full" />
+            </div>
+          </div>
           <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold">
             2 FOR 1
           </div>
@@ -268,8 +314,13 @@
 
       <!-- Student Discount -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div class="h-48 bg-[#39DB4A] relative">
-          <img src="./Assets/Egg salad.png" alt="Student Discount" class="w-full h-full object-cover opacity-90" />
+        <div class="h-48 bg-white relative p-4">
+          <div class="relative w-40 h-40 mx-auto">
+            <div class="absolute inset-0 bg-[#39DB4A] bg-opacity-20 rounded-full overflow-hidden">
+              <div class="absolute inset-0 bg-[#39DB4A] opacity-30 rounded-full"></div>
+              <img src="./Assets/Egg salad.png" alt="Student Discount" class="w-full h-full object-cover p-2 rounded-full" />
+            </div>
+          </div>
           <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold">
             15% OFF
           </div>
@@ -335,8 +386,9 @@
         <div class="space-y-4">
           <!-- Menu Item -->
           <div class="bg-white rounded-lg shadow-md p-4">
-            <div class="relative h-48 mb-4">
-              <img src="./Assets/dish 1.png" alt="Grilled Salmon" class="w-full h-full object-cover rounded-lg" />
+            <div class="relative h-48 w-48 mx-auto mb-4">
+              <div class="absolute inset-0 bg-[#39DB4A] rounded-full"></div>
+              <img src="./Assets/dish 1.png" alt="Grilled Salmon" class="absolute inset-0 w-full h-full object-contain p-2 rounded-full" />
             </div>
             <div class="flex justify-between items-start mb-2">
               <div>
@@ -346,15 +398,17 @@
               <span class="text-[#39DB4A] text-sm font-bold">$24.99</span>
             </div>
             <button class="add-to-cart w-full bg-[#39DB4A] text-white px-3 py-2 rounded text-xs hover:bg-green-700 transition"
-                    data-name="Grilled Salmon" data-price="24.99">
+                    data-name="Grilled Salmon" 
+                    data-price="24.99">
               Add to Cart
             </button>
           </div>
 
           <!-- Menu Item -->
           <div class="bg-white rounded-lg shadow-md p-4">
-            <div class="relative h-48 mb-4">
-              <img src="./Assets/dish 2.png" alt="Beef Steak" class="w-full h-full object-cover rounded-lg" />
+            <div class="relative h-48 w-48 mx-auto mb-4">
+              <div class="absolute inset-0 bg-[#39DB4A] rounded-full"></div>
+              <img src="./Assets/dish 2.png" alt="Beef Steak" class="absolute inset-0 w-full h-full object-contain p-2 rounded-full" />
             </div>
             <div class="flex justify-between items-start mb-2">
               <div>
@@ -364,7 +418,8 @@
               <span class="text-[#39DB4A] text-sm font-bold">$29.99</span>
             </div>
             <button class="add-to-cart w-full bg-[#39DB4A] text-white px-3 py-2 rounded text-xs hover:bg-green-700 transition"
-                    data-name="Beef Steak" data-price="29.99">
+                    data-name="Beef Steak" 
+                    data-price="29.99">
               Add to Cart
             </button>
           </div>
@@ -377,8 +432,9 @@
         <div class="space-y-4">
           <!-- Menu Item -->
           <div class="bg-white rounded-lg shadow-md p-4">
-            <div class="relative h-48 mb-4">
-              <img src="./Assets/Egg salad.png" alt="Caesar Salad" class="w-full h-full object-cover rounded-lg" />
+            <div class="relative h-48 w-48 mx-auto mb-4">
+              <div class="absolute inset-0 bg-[#39DB4A] rounded-full"></div>
+              <img src="./Assets/Egg salad.png" alt="Caesar Salad" class="absolute inset-0 w-full h-full object-contain p-2 rounded-full" />
             </div>
             <div class="flex justify-between items-start mb-2">
               <div>
@@ -388,15 +444,17 @@
               <span class="text-[#39DB4A] text-sm font-bold">$12.99</span>
             </div>
             <button class="add-to-cart w-full bg-[#39DB4A] text-white px-3 py-2 rounded text-xs hover:bg-green-700 transition"
-                    data-name="Caesar Salad" data-price="12.99">
+                    data-name="Caesar Salad" 
+                    data-price="12.99">
               Add to Cart
             </button>
           </div>
 
           <!-- Menu Item -->
           <div class="bg-white rounded-lg shadow-md p-4">
-            <div class="relative h-48 mb-4">
-              <img src="./Assets/Egg salad.png" alt="Greek Salad" class="w-full h-full object-cover rounded-lg" />
+            <div class="relative h-48 w-48 mx-auto mb-4">
+              <div class="absolute inset-0 bg-[#39DB4A] rounded-full"></div>
+              <img src="./Assets/Egg salad.png" alt="Greek Salad" class="absolute inset-0 w-full h-full object-contain p-2 rounded-full" />
             </div>
             <div class="flex justify-between items-start mb-2">
               <div>
@@ -406,7 +464,8 @@
               <span class="text-[#39DB4A] text-sm font-bold">$11.99</span>
             </div>
             <button class="add-to-cart w-full bg-[#39DB4A] text-white px-3 py-2 rounded text-xs hover:bg-green-700 transition"
-                    data-name="Greek Salad" data-price="11.99">
+                    data-name="Greek Salad" 
+                    data-price="11.99">
               Add to Cart
             </button>
           </div>
@@ -419,8 +478,9 @@
         <div class="space-y-4">
           <!-- Menu Item -->
           <div class="bg-white rounded-lg shadow-md p-4">
-            <div class="relative h-48 mb-4">
-              <img src="./Assets/dish 1.png" alt="Fresh Juice" class="w-full h-full object-cover rounded-lg" />
+            <div class="relative h-48 w-48 mx-auto mb-4">
+              <div class="absolute inset-0 bg-[#39DB4A] rounded-full"></div>
+              <img src="./Assets/dish 1.png" alt="Fresh Juice" class="absolute inset-0 w-full h-full object-contain p-2 rounded-full" />
             </div>
             <div class="flex justify-between items-start mb-2">
               <div>
@@ -430,15 +490,17 @@
               <span class="text-[#39DB4A] text-sm font-bold">$5.99</span>
             </div>
             <button class="add-to-cart w-full bg-[#39DB4A] text-white px-3 py-2 rounded text-xs hover:bg-green-700 transition"
-                    data-name="Fresh Juice" data-price="5.99">
+                    data-name="Fresh Juice" 
+                    data-price="5.99">
               Add to Cart
             </button>
           </div>
 
           <!-- Menu Item -->
           <div class="bg-white rounded-lg shadow-md p-4">
-            <div class="relative h-48 mb-4">
-              <img src="./Assets/dish 2.png" alt="Smoothie" class="w-full h-full object-cover rounded-lg" />
+            <div class="relative h-48 w-48 mx-auto mb-4">
+              <div class="absolute inset-0 bg-[#39DB4A] rounded-full"></div>
+              <img src="./Assets/dish 2.png" alt="Smoothie" class="absolute inset-0 w-full h-full object-contain p-2 rounded-full" />
             </div>
             <div class="flex justify-between items-start mb-2">
               <div>
@@ -448,7 +510,8 @@
               <span class="text-[#39DB4A] text-sm font-bold">$6.99</span>
             </div>
             <button class="add-to-cart w-full bg-[#39DB4A] text-white px-3 py-2 rounded text-xs hover:bg-green-700 transition"
-                    data-name="Smoothie" data-price="6.99">
+                    data-name="Smoothie" 
+                    data-price="6.99">
               Add to Cart
             </button>
           </div>
